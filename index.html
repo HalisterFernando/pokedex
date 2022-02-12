@@ -8,19 +8,28 @@
 
     <title>Document</title>
 </head>
-<body>    
-    <header class="py-5 text-center">        
+<body class="bg-slate-50">    
+    <header class="py-2 flex justify-center">        
          <h1 class="text-2xl">Search a Pokémon</h1>        
     </header>
-    <section class="flex justify-center">
-        <div class="flex flex-col w-1/2 p-5 items-center">
-            <input class="border border-black px-3 rounded w-48" placeholder="Nome do Pokémon" type="text" name="" id="poke-name">
-            <button id="search-btn" class="mt-2 px-2 rounded shadow-sm shadow-black transition-colors hover:bg-red-400">Go!</button>
-        </div>
-    </section>
-    <section id="poke-info">
-
-    </section>
+    <main>
+        <section class="flex justify-center">
+            <div class="flex flex-col w-1/2 p-5 items-center">
+                <input class="border border-black px-3 rounded w-48" placeholder="Nome do Pokémon" type="text" name="" id="poke-name">
+                <button id="search-btn" class="mt-2 px-2 rounded shadow-sm shadow-black transition-colors hover:bg-red-400">Go!</button>
+            </div>
+        </section>
+        <section id="poke-info" class="flex justify-center bg-slate-50 my-5">
+            <div id="poke-card" class="bg-white rounded-md shadow-md shadow-slate-500 w-80">
+                <img class="mx-auto" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="">
+                <div class="flex flex-col">
+                    <span class="mx-2 flex justify-between mb-2"><p class="font-semibold">Pikachu</p><span class="bg-yellow-300 px-1 rounded shadow shadow-black">Electric</span></span>
+                    <hr class="mx-2 bg-black border border-black rounded-sm">
+                    <span class="mx-2 b text-sm"><p class="break-normal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque nihil esse ut aliquid ipsam assumenda iure nam rem, consequuntur, eos tempora veritatis? Aperiam illo quasi repudiandae modi quas itaque dolore.</p></span>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 <script src="script.js"></script>
 </html>

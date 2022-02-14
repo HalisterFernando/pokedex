@@ -2,8 +2,29 @@ const searchBtn = document.getElementById('search-btn');
 const pokeName = document.getElementById('poke-name');
 const pokeInfo = document.getElementById('poke-info');
 
-const colorType = () => {
-    
+const typeClasses = {
+    Normal: 'bg-neutral-200',
+    Grass: 'bg-green-500',
+    Fire: 'bg-red-500',
+    Water: 'bg-cyan-400',
+    Fighting: 'bg-amber-700',
+    Flying: 'bg-sky-200',
+    Poison: 'bg-purple-500',
+    Ground: 'bg-orange-300',
+    Rock: 'bg-amber-100',
+    Bug: 'bg-lime-300',
+    Ghost: 'bg-indigo-500',
+    Electric: 'bg-yellow-300',
+    Psychic: 'bg-fuchsia-500',
+    Ice: 'bg-blue-200',
+    Dragon: 'bg-violet-400',
+    Dark: 'bg-amber-800',
+    Steel: 'bg-gray-300',
+    Fairy: 'bg-pink-400',
+};
+
+const colorType = (el) => {
+    el.classList.add(typeClasses[el.innerText])
 };
 
 const pokeCard = (obj) => {
@@ -29,9 +50,12 @@ const pokeCard = (obj) => {
     
 
     const pokeType = document.createElement('span');
+    pokeType.classList.add('px-1', 'rounded', 'shadow', 'shadow-black')
     pokeType.innerText = type.replace(/\w/, firstLetter => firstLetter.toUpperCase());    
+    colorType(pokeType);
     
-    const pokeType2 = document.createElement('span');    
+    const pokeType2 = document.createElement('span');   
+    pokeType2.classList.add('px-1', 'rounded', 'shadow', 'shadow-black') 
 
     const pokeHr = document.createElement('hr');
     pokeHr.classList.add('mx-2', 'bg-black', 'border', 'border-black', 'rounded-sm')
@@ -55,6 +79,7 @@ const pokeCard = (obj) => {
 
     if (type2) { 
         pokeType2.innerText = type2.replace(/\w/, firstLetter => firstLetter.toUpperCase());
+        colorType(pokeType2);
         pokeName.appendChild(pokeType2)
     };
 };
@@ -82,4 +107,5 @@ const fetchPokémon = async () => {
 };
 
 searchBtn.addEventListener('click', fetchPokémon)
+
 

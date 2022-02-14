@@ -2,6 +2,10 @@ const searchBtn = document.getElementById('search-btn');
 const pokeName = document.getElementById('poke-name');
 const pokeInfo = document.getElementById('poke-info');
 
+const colorType = () => {
+    
+};
+
 const pokeCard = (obj) => {
     const { img, name, flavor, type, type2 } = obj;
     const pokeSec = document.getElementById('poke-info');
@@ -27,11 +31,7 @@ const pokeCard = (obj) => {
     const pokeType = document.createElement('span');
     pokeType.innerText = type.replace(/\w/, firstLetter => firstLetter.toUpperCase());    
     
-    const pokeType2 = document.createElement('span');
-   
-   
-    
-    
+    const pokeType2 = document.createElement('span');    
 
     const pokeHr = document.createElement('hr');
     pokeHr.classList.add('mx-2', 'bg-black', 'border', 'border-black', 'rounded-sm')
